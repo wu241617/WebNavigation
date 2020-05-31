@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+kbd{
+    display: inline-block;
+    /*kbd默认是inline属性*/
+    border: 1px solid red;
+    width: 4em;
+    height: 4em;
+    text-transform: uppercase;
+    /*文本小写变大写*/
+    position: relative;
+}
+kbd>button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+    /*绝对定位到右下角*/
+    transition: all 0.3s;
+    border-radius: 2px;
+	background: rgba(255,255,255,.2);
+}
+kbd:hover>button{
+    display: inline-block;
+    /*鼠标浮到kbd上才出现*/
+}
+kbd>button:hover{
+    background: rgba(255,0,0,.1);
+    color:cornflowerblue;
+	cursor:pointer;
+}
+kbd:hover{
+	/*线性渐变:0-70白色,70-100,fff-f3f3f3渐变*/
+	/* background: linear-gradient(to bottom, #fff 0%,#fff 70%,#f3f3f3 100%); */
+	background: linear-gradient(pink,white);
+	color:black;
+}
+#main{
+    display: inline-block;
+    padding: 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+}
+body {
+    /*background: linear-gradient(to bottom, #fff 0%,#888e94 100%);*/
+    background: #ccc url("./pic-6.jpg") repeat center center scroll;
+    background-size: cover;
+    /*背景完全覆盖*/
+}
+main {
+    margin: 0;
+    text-align: center;
+    /*绝对居中父元素上的三行代码*/
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+    height: 350px;
+    min-width: 1000px;
+    /*设置最小宽度,防止变形*/
+}
+/*mainxxx这个div居中*/
+#main{
+	box-shadow:0px 0px 10px 10px rgba(255,0,0,.3);
+}
+#main>div:nth-child(2){
+    margin-left: -30px;
+}
+#main>div:nth-child(3){
+    margin-left: -32px;
+}
+/*美化按键*/
+/**/
+/*}*/
+.kbd{
+    margin: 0;
+    padding: 0;
+    border:0;
+    width: 65px;
+    height: 50px;
+	background: linear-gradient(white,pink);
+    border-radius: 7px;
+    /*下方阴影,box-shadow5个最常用属性,分别是左偏移,右偏移,模糊,扩张,颜色*/
+    box-shadow: 0 5px 0 0 #767d81;
+    color: #767D81;
+    font-family: Helvetical;
+	font-weight:bold;
+    vertical-align: top;
+    position: relative;
+    /*用flex布局居中文字*/
+    /*display: inline-flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+.kbd_wrapper{
+    display: inline-block;
+    vertical-align: top;
+    /*这两句一定要搭配使用!!!!*/
+    width: 65px;
+    height: 55px;
+    /*border:1px solid #3C3C3D;*/
+    border-radius: 7px;
+    margin: 0 10px;
+    /**/
+    box-shadow: 0 4px 3px 0 #3C3C3D,0 0 1px 0 #3C3C3D;
+    /*下,一圈*/
+}
+#main>div{
+    margin: 20px 0;
+}
+/*让html和body占满屏幕100%的方法*/
+/*方法一:!*html,body{*!*/
+    /*height: 100%;*/
+/*}*/
+kbd img{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 7px;
+    bottom: 4px;
+}
+kbd .text{
+    position: absolute;
+    left: 7px;
+    top: 4px;
+}
+.kbd_wrapper:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+.search{
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 500px;
+}
+.search #searchInput{
+    border: 0;
+    background: transparent;
+	height:30px;
+    color: navajowhite;
+	text-align:center;
+    border-bottom: 3px solid pink;
+    outline: none;   
+    width: 250px;
+	margin:0 10px;
+}
+.search .button,.search #btn{
+    display: inline-block;
+    background: linear-gradient(white,pink);
+    border-radius: 5px;
+    border: 2px solid #767D81;
+    color: #767D81;
+	margin:0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select:none;
+    transition: all .5s;
+	font-weight:bold;
+}
+.search .button:hover,.search #btn:hover{
+   /* background: rgb(206, 206, 206); */
+   background: rgba(255, 0, 0,.5);
+   color:rgba(255,255,255,.8);
+} 
+.tips{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding:20px;
+    padding-top: 10px;
+    background: rgba(255,255,255,0.7); 
+    border-radius: 10px;
+	box-shadow:0px 0px 10px 10px rgba(255,0,0,.3);
+}
+.tips .title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px;
+	padding-bottom:5px;
+    margin-bottom: 15px;
+	border-bottom:1px solid black;
+}
+.tips ul li{
+	font-size:16px;
+	color:rgba(0,0,0,.7);
+}
+#btn{
+	width:80px;
+	height:35px;
+	background:linear-gradient(white,pink);
+	cursor:pointer
+}
+
+@keyframes shake{
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+            color:navajowhite;
+			font-weight:bold;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:navajowhite;
+			font-weight:bold;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:navajowhite;
+			font-weight:bold;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:navajowhite;
+			font-weight:bold;
+        }

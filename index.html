@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalabel="no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航键盘</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="//at.alicdn.com/t/font_934134_shmrxc5tsub.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+		<button id="btn">使用说明</button>
+        <input type="text" spellcheck="false" placeholder="Search" id="searchInput">
+        <span class="button" searchEngine="baidu" >
+            <svg class="icon" aria-hidden="true" >
+                <use xlink:href="#icon-icon_baidulogo"></use>
+            </svg>
+            <span>百度</span>
+        </span>
+		<span class="button" searchEngine="bing"  >
+		    <svg class="icon" aria-hidden="true">
+		        <use xlink:href="#icon-biying"></use>
+		    </svg>
+		    <span>必应</span>
+		</span>
+        <span class="button" searchEngine="google">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-gugesousuo"></use>
+            </svg>
+            <span>谷歌</span>
+        </span>
+    </div>
+    <main>
+        <div id="main">
+            <!--<div class="kbd_wrapper">-->
+            <!--<kbd class="kbd">A</kbd>-->
+            <!--</div>-->
+        </div>
+    </main>
+    <div class="tips" style="display:none;"> 
+        <div class="title">使用说明:</div>
+        <div class="div"></div>
+        <div></div>
+        <ul>
+			<li>输入框中输入搜索内容，选择右边浏览器进行搜索。</li>
+			<li>鼠标悬浮在按键上时，可点击编辑导航网址，并自动获取网站图标。</li>
+            <li>按键盘上相应字母进入导航网站。</li>   
+            <li>键盘上'.'代表未设置网站或无网站图标。</li>
+			<li>编辑后网址存在本地localStorage中。</li>
+        </ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
